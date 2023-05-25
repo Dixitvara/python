@@ -674,7 +674,7 @@ mat.title('www.skyadav.com')
 mat.legend()
 mat.show()"""
 
-#Pie chart
+# Pie chart
 """
 import pandas as p
 import matplotlib.pyplot as mat
@@ -688,7 +688,7 @@ mat.legend()
 mat.show()
 """
 
-#line graph
+# line graph
 """import pandas as p
 import matplotlib.pyplot as mat
 
@@ -717,7 +717,7 @@ class Student:
 obj = Student()
 obj.talk()"""
 
-#example of constructor
+# example of constructor
 """class Student:
     def __init__(self,name = "",mark = 0):
         self.name = name
@@ -729,7 +729,7 @@ obj = Student("dixit",70)
 obj.printData()
 """
 
-#decorators example
+# decorators example
 """
 class Student:
     rno = 0
@@ -751,7 +751,7 @@ obj2 = Student("shivkaran",66)
 obj2.printData()
 """
 
-#getter setter functions
+# getter setter functions
 """
 class Student:
     rno = 0
@@ -794,7 +794,7 @@ obj2.printData()
 Result.isPass(obj)
 """
 
-#inner class
+# inner class
 """
 class Person:
     def __init__(self):
@@ -816,4 +816,314 @@ x = p.db
 x.display()
 """
 
-#this is old files
+# sql connection
+# installing sql module
+# command : pip install mysql-connector-python
+
+
+# import mysql.connector
+# mydb = mysql.connector.connect(
+#     host="localhost",
+#     user="root",
+#     password="",
+#     database="demo"
+# )
+
+
+# def insert():
+
+#     # inserting data into database
+#     name = input("enter emp name : ")
+#     salary = input("enter emp salary : ")
+#     address = input("enter emp address : ")
+
+#     list = [name, salary, address]
+#     c = mydb.cursor()
+
+#     sql = "insert into myemp(ename,salary,address) values(%s, %s, %s)"
+#     c.execute(sql, list)
+#     mydb.commit()
+#     print(c.rowcount, "record inserted")
+
+
+# def delete():
+#     oldname = input("enter old emp name : ")
+#     name = input("enter new emp name : ")
+#     salary = input("enter new emp salary : ")
+#     address = input("enter new emp address : ")
+
+#     newlist = [name, salary, address, oldname]
+
+#     c = mydb.cursor()
+
+#     sql = "UPDATE myemp SET ename=%s,salary=%s,address=%s WHERE ename=%s"
+
+#     c.execute(sql, newlist)
+#     mydb.commit()
+#     print(c.rowcount, "record inserted")
+
+# constructor in inheritance
+# class baap:
+#     def __init__(self):
+#         self.shoes = 80000
+#     def shoeStyle(self):
+#         print("baap ke pass se shoe : ", self.shoes,"ke")
+# class beta(baap):
+#     pass
+# beta = beta()
+# beta.shoeStyle()
+
+# # something
+# class Square:
+#     def __init__(self,x):
+#         self.x = x
+#     def area(self):
+#         print("area of square ==> ", self.x * self.x)
+# class Rectangle(Square):
+#     def __init__(self, x, y):
+#         self.y = y
+#         super().__init__(x)
+#     def area(self):
+#         super().area()
+#         print("area of rectangle ==> ",self.x * self.y)
+# a, b = [float(x) for x in input("enter two measurements : ").split()]
+# r = Rectangle(a, b)
+# r.area()
+
+# #multiple inheritance
+# class A():
+#     def __init__(self):
+#         self.a = 10
+#         print("a : ", self.a)
+#         super().__init__()
+# class B():
+#     def __init__(self):
+#         self.b = 20
+#         print("b : ", self.b)
+#         super().__init__()
+# class C(A,B):
+#     def __init__(self):
+#         self.c = 30
+#         print("c : ", self.c)
+#         super().__init__()
+# obj = C()
+
+# #Hybrid inheritance
+
+# class A():
+#     def __init__(self):
+#         self.a = 10
+#         print("a : ", self.a)
+#         super().__init__()
+# class B(A):
+#     def __init__(self):
+#         self.b = 20
+#         print("b : ", self.b)
+#         super().__init__()
+# class C(A):
+#     def __init__(self):
+#         self.c = 30
+#         print("c : ", self.c)
+#         super().__init__()
+# class D(B,C):
+#     def __init__(self):
+#         self.d = 40
+#         print("d : ", self.d)
+#         super().__init__()
+# obj = D()
+
+
+# operator overloading
+"""class book1:
+    def __init__(self, pages):
+        self.pages = pages
+
+    def __add__(self, other):
+        return self.pages + other.pages
+
+
+class book2:
+    def __init__(self, pages):
+        self.pages = pages
+
+    def __add__(self, other):
+        return self.pages + other.pages
+b1 = book1(100)
+b2 = book2(200)
+bx = b1 + b2
+print(bx)
+"""
+
+# __gt__
+"""class book1:
+    def __init__(self, pages):
+        self.pages = pages
+
+    def __gt__(self, other):
+        return self.pages > other.pages
+
+class book2:
+    def __init__(self, pages):
+        self.pages = pages
+
+    def __gt__(self, other):
+        return self.pages > other.pages
+b1 = book1(300)
+b2 = book2(200)
+
+if b1 > b2:
+    print("B1 have more pages")
+else:
+    print("B2 have more pages")
+"""
+
+# method overloading in python example
+# it is not possible in python
+"""
+def product(a, b):
+    p = a * b
+    print(p)
+def product(a, b, c):
+    p = a * b * c
+    print(p)
+
+product(2, 10, 3)
+"""
+
+# method overloading example
+"""
+class overloading:
+    def sum (self, a = None, b = None, c = None):
+        if a!= None and b!= None and c!= None:
+            print("sub : ", a + b + c)
+        elif a!= None and b!= None:
+            print("sum : ", a + b)
+        else:
+            print("enter 2 or 3 args")
+obj = overloading()
+obj.sum(5,1,4)
+obj.sum(5,1)
+obj.sum(1)
+"""
+
+# abstraction in python
+"""
+import math
+from abc import ABC, abstractmethod
+class myclass(ABC):
+    @abstractmethod
+    def calculate(self, x):
+        pass
+
+class sub1(myclass):
+    def calculate(self, x):
+        print("square : ", x * x)
+
+class sub2(myclass):
+    def calculate(self, x):
+        print("squaroot : ", math.sqrt(x))
+
+class sub3(myclass):
+    def calculate(self, x):
+        print("cube : ", x * x * x)
+
+obj = sub1()
+obj.calculate(4)
+obj = sub2()
+obj.calculate(16)
+obj = sub3()
+obj.calculate(3)
+"""
+
+# abstract method example
+"""
+from abc import *
+class car(ABC):
+    def __init__(self, regno):
+        self.regno = regno
+    def openTank(self):
+        print("fill the tank")
+        print("car regno : ", self.regno)
+    @abstractmethod
+    def steering(self):
+        pass
+    def breaks(self):
+        pass
+
+class maruti(car):
+    def steering(self):
+        print("Maruti : manual steering")
+    def breaks(self):
+        print("Maruti : gas breaks")
+
+class tesla(car):
+    def steering(self):
+        print("Tesla : auto pilot steering")
+    def breaks(self):
+        print("Tesla : automatic breaks")
+
+obj = maruti(4204)
+obj.openTank()
+obj.steering()
+obj.breaks()
+
+obj = tesla(1230)
+obj.openTank()
+obj.steering()
+obj.breaks()
+"""
+
+#example
+from abc import *
+class myclass(ABC):
+    @abstractmethod
+    def connect(self):
+        pass
+    def disconnect(self):
+        pass
+
+class oracle(myclass):
+    def connect(self):
+        print("Connecting to oracle")
+    def disconnect(self):
+        print("disconnecting to oracle")
+
+class sql(myclass):
+    def connect(self):
+        print("Connecting to sql")
+    def disconnect(self):
+        print("disconnecting to sql")
+
+dataBase = input("enter database name : ")
+className = globals() [dataBase]
+obj = className()
+obj.connect()
+obj.disconnect()
+
+#example
+from abc import *
+class myclass(ABC):
+    @abstractmethod
+    def connect(self):
+        print("connecting")
+    @abstractmethod
+    def disconnect(self):
+        print("disconnecting")
+
+class oracle(myclass):
+    def connect(self):
+        print("Connecting to oracle")
+    def disconnect(self):
+        print("disconnecting to oracle")
+
+class sql(myclass):
+    def connect(self):
+        print("Connecting to sql")
+    def disconnect(self):
+        print("disconnecting to sql")
+
+dataBase = input("enter database name : ")
+className = globals() [dataBase]
+obj = className()
+obj.connect()
+obj.disconnect()
